@@ -1,0 +1,106 @@
+---
+title: |
+    | ¿Es economía de la conducta?
+    | Naïve Learning in Social Networks and the Wisdom of Crowd (2010)
+runningheader: 'Economía del comportamiento'
+author: 'Carlos Lezama'
+date: '7 de octubre de 2022'
+output:
+  tufte::tufte_handout:
+    citation_package: natbib
+    latex_engine: xelatex
+    includes:
+        in_header: 'preamble.tex'
+bibliography: ref.bib
+link-citations: yes
+---
+
+# Entorno
+
+Las redes sociales son los principales conductos de información, opiniones y comportamientos. No basta solo considerar a las aplicaciones desarrolladas por Meta, Snapchat o TikTok como redes sociales. Todo nuestro entorno social nos lleva a tomar decisiones más educadas, arbitrarias, hostiles o altruistas.
+
+Como individuos, nos comunicamos con personas y grupos de opiniones y creencias variadas. Así como interactuamos con todas a lo largo de nueva vida, cada día nos sesgamos con información nueva. Alguien nos dice que, por una mala experiencia, ya no deberíamos comer en McDonald's. O, por distintas motivaciones morales, no deberíamos comer carne.
+
+Si bien no todas nuestras interacciones tienen efecto sobre nuestras decisiones individuales, al vivir en sociedad, todos los agentes quienes nos comunicamos en ella determinamos su evolución a lo largo del tiempo.
+
+El crecimiento de ciudades ineficientes, pueblos xenofóbicos, o incluso, casos de histeria colectiva son todos ejemplos de cómo nuestro comportamiento en redes puede llevarnos a resultados no deseados.
+
+Sin embargo, antes de intentar predecir el comportamiento de nuestros grupos sociales, debemos entender qué estructuras de redes sociales llegan a agregar información completa, correcta y descentralizada.
+
+La completitud y exactitud son parámetros de medición. En cambio, dos supuestos importantes se deben tomar en cuenta para simplificar el problema: 1) la descentralización y 2) la ingenuidad[^1].
+
+[^1]: En inglés, *naïvety*.
+
+En un mundo conectado por medios de comunicación poderosos, es sencillo predecir qué información llegará a todos los individuos. Pero nos interesa aún más cómo nos comunicamos entre nosotros (descentralización), cómo refutamos o aceptamos la información que se nos otorga al partir de la idea que solo conocemos una porción de la verdad — alguno lo leyó en twitter, otro lo escuchó en la radio camino al trabajo, a alguien más se lo contó un conocido — y, en el día a día, recibimos esa información y la aceptamos como verdadera sin cuestionar (ingenuidad).
+
+Dado que la comunicación social a menudo implica transferencias repetidas de información entre un gran número de individuos en redes complejas, el aprendizaje completamente racional se vuelve inviable en distintos escenarios. @naive identifican redes sociales para las cuales los individuos ingenuos convergen hacia creencias totalmente racionales a pesar de usar reglas de actualización simples y descentralizadas, así como, redes sociales para las cuales las creencias no logran converger al límite racional bajo la misma actualización.
+
+# Modelo
+
+@naive basan su estudio en un importante modelo de influencia en redes de @degroot.
+
+> La estructura social de una sociedad se describe mediante una red ponderada y posiblemente dirigida. Los agentes tienen creencias sobre alguna cuestión común de interés, por ejemplo, la probabilidad de algún evento. En cada fecha, los agentes se comunican con sus vecinos en la red social y actualizan sus creencias. El proceso de actualización es simple. La nueva creencia de un agente es el promedio (ponderado) de las creencias de sus vecinos del período anterior. Con el tiempo, siempre que la red esté fuertemente conectada (de modo que haya un camino directo de cualquier agente a cualquier otro) y satisfaga una condición de aperiodicidad débil, las creencias convergen en un consenso. Esto es facil de entender. Al menos un agente con la creencia más baja debe tener un vecino que tenga una creencia más alta y, de manera similar, algún agente con la creencia más alta debe tener un vecino con una creencia más baja. Entonces, la distancia entre las creencias más altas y más bajas decae con el tiempo. [@naive]
+
+Se considera un conjunto con $n$ *agentes* o *nodos* que siguen un comportamiento estocástico determinado por una matriz de interacciones no-negativa $\mathbf{T}$, misma que puede ser asimétrica y cuyas interacciones pueden ser unilaterales — i.e., puede pasar $T_{ij} > 0$ cuando $i$ presta atención a $j$ a la vez que $T_{ji} = 0$ cuando $j$ no presta atención a $i$.
+
+A lo largo del tiempo, definimos una regla de actualización de creencias tal que cada agente posee una creencia $p_i^{(t)} \in \mathbb{R}$ en el período $t$ como sigue:
+
+$$
+\mathbf{p}^{(t)} = \mathbf{T}\mathbf{p}^{(t - 1)} = \mathbf{T}^{t} \mathbf{p}^{(0)}.
+$$
+
+Para dar un poco de aleatoreidad a este *setup*, cada agente recibe una señal de ruido ($e_i \in \mathbb{R}$) en $t = 0$ tal que $p_i^{(0)} = \mu + e_i$ donde $\mu$ es un "estado de la naturaleza".
+
+Múltiples proposiciones y enunciados matemáticos relacionados con la convergencia de la información o su estado estacionario pueden surgir a partir de dicha configuración. No obstante, hay un definición que @naive agregan al modelo de @degroot: la **sabiduría**.
+
+# Sabiduría
+
+Se dice que una sequencia $\displaystyle \left( \mathbf{T} (n) \right)_{n = 1}^\infty$ es **sabia** si
+
+$$
+\text{p}\lim_{n \to \infty} \max_{i \leq n} \lvert p_i^{(\infty)} (n) - \mu \rvert = 0
+$$
+
+donde $\mu \in [0, 1]$ y $\sigma^2 > 0$ son la media y la varianza de la señal observada de forma independiente por cada uno de los individuos en $t = 0$ — i.e., $p_1^{(0)} \perp \cdots \perp p_n^{(0)}$, $\forall n$.
+
+El límite inferior común de la varianza asegura que la convergencia a la verdad no se produzca simplemente porque hay agentes arbitrariamente bien informados en la sociedad.
+
+Al asumir simetría en $\mathbf{T}$, podemos reescribir
+
+$$
+p^{(\infty)} (n) = \sum_{i \leq n} s_i(n)p_i^{(0)}(n),
+$$
+
+tal que, de forma intuitiva, decimos que $s_i$ mide cómo el agente $i$ influye de forma indirecta en la creencia limitante (nodos adyacentes).
+
+Esta definición y propiedades derivadas de la misma fueron aplicadas al análisis de redes para mostrar cómo podemos llegar a conclusiones erradas dados los supuestos impuestos.
+
+La eficiencia del aprendizaje puede depender, de manera sensible, de la forma en que se organiza la red social. Desde una perspectiva técnica, se muestra que el modelo @degroot proporciona un marco inusualmente manejable para caracterizar la relación entre la estructura y el aprendizaje y es un punto de referencia útil.
+
+¿Pueden las grandes sociedades con agentes ingenuos ser inteligentes en conjunto? En este modelo, pueden, si hay suficiente dispersión en las personas a las que escuchan, y si evitan concentrarse demasiado en cualquier grupo pequeño.
+
+Sin embargo, esto puede fallar tan rápido como se demuestra su existencia.
+
+Definamos racionalidad como sigue:
+
+> Una función de elección $c$ es racional si existe una relación binaria de orden lineal $P$ sobre $X$ si, para cada menú de opciones $A$,
+>
+> $$
+> c(A) = \max (A, P).
+> $$
+
+Aquí es importante observar que $c(A)$ debe ser la *única* alternativa para todo el menú de opciones. Así pues, es fácil observar su equivalencia estocástica con la definición de *sabiduría* expuesta con anterioridad y reescribirla como un modelo de preferencias aleatorias tal que
+
+$$
+c(x, A) = \sum_{x = \max (A, P)} \mu(P)
+$$
+
+para toda $A$ y toda $x$ en $A$.
+
+En un estricto sentido, aquí no se observan aprendizajes ajenos al racional, se usan como desviaciones del mismo. Al imponer la racionalidad como métrica, se pierde un amplio aprendizaje de patrones de comunicación importantes.
+
+# Alternativas
+
+Al día de hoy, investigaciones importantes se han llevado a cabo de este lado del análisis de las interacciones sociales. Los acercamientos más acertados han sido desarrollados por @uninformed al relajar los dos supuestos impuestos 9 años antes por @naive. Si bien continuan utilizando la definición de sabiduría, el enfoque es sustancialmente distinto como democracia para escapar de dictaduras de creencias, lo que ha permitido verdaderamente acercar la *sabiduría de las masas*[^2] a la economía del comportamiento.
+
+[^2]: En inglés, *wisdom of the crowds*.
