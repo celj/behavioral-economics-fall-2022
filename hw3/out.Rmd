@@ -25,14 +25,24 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# hola
+Gran parte del esfuerzo realizado en las ciencias del comportamiento es comprender la base psicológica y biológica de las decisiones subóptimas (o irracionales) de las personas.
 
-bola
+Un objetivo clave de la política de uso de suelo es brindar orientación sobre políticas al gobierno y a los planificadores con respecto a cuestiones en geografía, agricultura, conservación ambiental, vivienda, desarrollo urbano, transporte, entre otras.
 
-# hola
+El consenso general es que los seres humanos suelen ser víctimas de sesgos psicológicos cuando se ven abrumados por una gran cantidad de información, carecen de práctica o experiencia, o se encuentran bajo presión emocional o cognitiva. Desafortunadamente, el panorama de la toma de decisiones sobre políticas de uso de suelo está repleto de estos problemas en tres aspectos principales.
 
-bola
+En primer lugar, el proceso de formulación de políticas de uso de suelo es complejo, con retroalimentaciones excesivamente tardías. La determinación del uso óptimo de suelo implica la consideración de impactos a largo plazo en el sistema ecológico, las implicaciones económicas para los vecindarios y el bienestar general de todos los residentes involucrados; a menudo lleva años, si no décadas, descubrir los impactos de una determinada política. Es probable que los funcionarios gubernamentales y los planificadores utilicen heurísticas (*mental shortcuts*) al tomar decisiones. Por ejemplo, pueden centrarse en información que esté disponible de inmediato en lugar de utilizar el conjunto completo (*availability bias*) o depender demasiado de las opiniones de expertos (*anchoring effect*). La falta de retroalimentación inmediata y precisa sobre sus decisiones puede conducir a resultados no deseados (*over-confidence*).
 
-# hola
+Segundo, las personas con recursos financieros limitados pueden tener una capacidad cognitiva obstaculizada por sus problemas financieros---que superan a otros factores en la toma de decisiones. Por ejemplo, la presión financiera inmediata que enfrentan los hogares pobres deja poca capacidad para considerar los beneficios a largo plazo de sus inmuebles, incluso si el plan está completamente subsidiado por el gobierno.
 
-bola
+En tercer lugar, las personas a menudo están emocionalmente apegadas a la tierra o las propiedades que poseen (*place attachment*) dada la intensa interacción con dichos bienes durante un largo período de tiempo. El efecto de este lazo emocional también se ve intensificado por el efecto dotación, donde el propietario sobrestima el valor de su propiedad e impide la adquisición por potenciales residentes.
+
+@Liu exploran la noción de efecto dotación. Este artículo aborda un problema importante en el desarrollo rural chino, a saber, los intentos del gobierno de abordar el problema de los llamados "pueblos huecos" mediante la reubicación de los residentes del pueblo en nuevos asentamientos, que generalmente consisten en bloques de apartamentos de gran altura recién construidos.
+
+El término "pueblos huecos" se refiere al descuido y el abandono final de las viviendas rurales cuando la población en edad laboral se va para buscar empleo en otro lugar, generalmente en las principales ciudades de rápido crecimiento en el Este de China. Ha habido un gran éxodo de personas en edad laboral del campo chino en las últimas tres décadas, y los ancianos y los niños pequeños a menudo son dejados atrás por los inmigrantes. Alrededor de una quinta parte de las casas rurales se registraron como desocupadas en una encuesta realizada a mediados de la década de 2010. Las tierras de cultivo también pueden subutilizarse y abandonarse en este proceso. Por lo tanto, la reconfiguración del patrón de asentamiento también es parte de los intentos de utilizar las tierras agrícolas de manera más productiva mediante la recuperación de tierras que antes se usaban para viviendas con el fin de agregarlas al área agrícola productiva.
+
+@Liu se refieren a la política gubernamental que promueve la retirada de las viviendas rurales, en virtud de la cual se compensa a los aldeanos por abandonar sus hogares y mudarse a nuevos bloques de apartamentos. Su encuesta a aldeanos en Chengdu, provincia de Sichuan, examina los impactos del efecto dotación y el apego a sus hogares. Estos últimos son de calidad variable y, por lo tanto, las percepciones de los aldeanos sobre su valor también varían. Los autores observaron que era común que existiera una brecha notable entre las valoraciones de la propiedad por parte de los dueños de casa y el monto de la compensación que se ofrecía. Las expectativas de compensación de los aldeanos a menudo superaban el precio de la vivienda comercial local. Esto refleja un efecto dotación en el que el precio que las personas están dispuestas a pagar por un bien suele ser menor que el precio que están dispuestas a aceptar para renunciar al mismo bien.
+
+Los autores también investigaron las expectativas subjetivas de los aldeanos en relación con sus hogares y cómo las variaciones entre los aldeanos afectaron las demandas de compensación. Variaciones clave relacionadas con el apego emocional, el estado de los derechos de propiedad, los medios de subsistencia, el conocimiento de los derechos de herencia y el conocimiento de los derechos de hipoteca. En este caso, el factor clave parece ser la sustituibilidad, donde la sustituibilidad de un bien se refiere a la importancia de las funciones objetivas del bien para los individuos. En otras palabras, el bien brinda más apoyo a las personas y es más difícil de reemplazar, lo que genera una mayor aversión a las pérdidas y efectos dotación.
+
+En Chengdu, la sustituibilidad se relacionaba principalmente con los medios de subsistencia de los jefes de hogar. La sustituibilidad de los medios de vida de los aldeanos afectó positivamente los efectos dotación en los hogares agrícolas de tiempo completo y afectó negativamente los efectos dotación en los hogares no agrícolas. Un efecto dotación es estadísticamente común y relevante en relación con la política que promueve el retiro de las viviendas rurales.
