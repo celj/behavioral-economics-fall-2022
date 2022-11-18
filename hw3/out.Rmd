@@ -1,0 +1,38 @@
+---
+title: |
+  | Política conductual de uso de suelo
+shorttitle: Economía de la conducta
+shortauthors: Carlos Lezama
+author:
+- name: Carlos Enrique Lezama Jacinto
+  affiliation: |
+    |
+    | Instituto Tecnológico
+    | Autónomo de México
+  address: |
+    |
+    | clezamaj\@itam.mx
+classoption: [cm, linguex]
+bibliography: ref.bib
+output: 
+  rticles::glossa_article:
+    citation_package: natbib
+    includes:
+      in_header: "preamble.tex"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# hola
+
+bola
+
+# hola
+
+bola
+
+# hola
+
+bola
